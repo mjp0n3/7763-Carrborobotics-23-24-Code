@@ -24,6 +24,15 @@ import edu.wpi.first.math.util.Units;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+
+  public static final class ShooterConstants {
+
+    public static final int kShooterLeftId = 12;
+    public static final int kShooterRightId = 13;
+    public static final int kintake1Id = 12;
+    public static final int kintake2Id = 13;
+
+  }
   public static final class DriveConstants {
     // Driving Parameters - Note that these are not the maximum capable speeds of
     // the robot, rather the allowed maximum speeds
