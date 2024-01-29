@@ -23,7 +23,7 @@ public class ShooterSubsystem extends SubsystemBase {
 
     public void shooterON(){
         // ArmLeft.setNeutralMode(NeutralMode.Brake);
-        ShooterRight.set(25);
+        ShooterRight.set(50);
         ShooterLeft.set(50);
     }
     public void intakeON(){
