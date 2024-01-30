@@ -33,10 +33,10 @@ import java.util.List;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+
   // The robot's subsystems
   private final DriveSubsystem m_robotDrive = new DriveSubsystem();
-    private final ShooterSubsystem shootersubsystem = new ShooterSubsystem();
-
+  private final ShooterSubsystem shootersubsystem = new ShooterSubsystem();
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
@@ -71,13 +71,20 @@ public class RobotContainer {
    * {@link JoystickButton}.
    */
   private void configureButtonBindings() {
+    //A button: puts the wheels to X
     new JoystickButton(m_driverController, Button.kA.value)
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));
 
-    new JoystickButton(m_driverController, 1)
-    .whileTrue(new RunCommand(()-> shootersubsystem.shooterON()));
+    // Left Bumper: Turn shooter on/off
+    new JoystickButton(m_driverController, Button.kLeftBumper.value)
+        .onTrue(new RunCommand(()-> shootersubsystem.shooterFlip()));
+
+    // Right Bumper: Turn intake on/off
+    new JoystickButton(m_driverController, Button.kRightBumper.value)
+        .onTrue(new RunCommand(()-> shootersubsystem.intakeFlip()));
+
   }
 
   /**
