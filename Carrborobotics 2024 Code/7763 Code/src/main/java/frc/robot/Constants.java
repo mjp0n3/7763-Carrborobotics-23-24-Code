@@ -29,8 +29,8 @@ public final class Constants {
 
     public static final int kShooterLeftId = 12;
     public static final int kShooterRightId = 13;
-    public static final int kintake1Id = 13;
-    public static final int kintake2Id = 14;
+    public static final int kintake1Id = 14;
+    public static final int kintake2Id = 15;
 
   }
   public static final class DriveConstants {
